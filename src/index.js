@@ -1,12 +1,10 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import { View, Text } from 'react-native';
+
+import Routes from './routes';
 
 import './config/ReactotronConfig';
 
-const App = () => (
-  <View>
-    <Text>Hello World</Text>
-  </View>
-);
+const App = () => <Routes />;
 
 export default App;

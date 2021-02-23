@@ -1,6 +1,8 @@
 module.exports = {
   env: {
     es6: true,
+    jest: true,
+    browser: true,
   },
   extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
   globals: {
@@ -45,6 +47,7 @@ module.exports = {
       },
     ],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'array-element-newline': ['error', { multiline: true }],
   },
   settings: {
     'import/resolver': {
