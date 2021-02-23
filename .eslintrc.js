@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: ['react', 'prettier', 'react-hooks', 'eslint-plugin-import-helpers'],
   rules: {
+    // 'prettier/prettier': ['error', { endOfLine: 'auto' }],
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
       'warn',
