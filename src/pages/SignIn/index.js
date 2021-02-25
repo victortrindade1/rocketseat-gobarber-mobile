@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Image } from 'react-native';
 
 import logo from '~/assets/logo.png';
@@ -13,34 +13,44 @@ import {
   SignLinkText,
 } from './styles';
 
-const SignIn = ({ navigation }) => (
-  <Background>
-    <Container>
-      <Image source={logo} />
+const SignIn = ({ navigation }) => {
+  const passwordRef = useRef();
 
-      <Form>
-        <FormInput
-          icon="mail-outline"
-          keyboardType="email-address"
-          autoCorrect={false}
-          autoCapitalize="none"
-          placeholder="Digite seu e-mail"
-        />
+  function handleSubmit() { }
 
-        <FormInput
-          icon="lock-outline"
-          secureTextEntry
-          placeholder="Sua senha secreta"
-        />
+  return (
+    <Background>
+      <Container>
+        <Image source={logo} />
 
-        <SubmitButton onPress={() => { }}>Acessar</SubmitButton>
-      </Form>
+        <Form>
+          <FormInput
+            icon="mail-outline"
+            keyboardType="email-address"
+            autoCorrect={false}
+            autoCapitalize="none"
+            placeholder="Digite seu e-mail"
+            returnKeyType="next"
+            onSubmitEditing={() => passwordRef.current.focus()}
+          />
 
-      <SignLink onPress={() => navigation.navigate('SignUp')}>
-        <SignLinkText>Criar conta gratuita</SignLinkText>
-      </SignLink>
-    </Container>
-  </Background>
-);
+          <FormInput
+            icon="lock-outline"
+            secureTextEntry
+            placeholder="Sua senha secreta"
+            ref={passwordRef}
+            returnKeyType="send"
+            onSubmitEditing={handleSubmit}
+          />
 
+          <SubmitButton onPress={handleSubmit}>Acessar</SubmitButton>
+        </Form>
+
+        <SignLink onPress={() => navigation.navigate('SignUp')}>
+          <SignLinkText>Criar conta gratuita</SignLinkText>
+        </SignLink>
+      </Container>
+    </Background>
+  );
+};
 export default SignIn;
