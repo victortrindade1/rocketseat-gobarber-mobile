@@ -97,7 +97,7 @@ const SignUp = ({ navigation }) => (
           placeholder="Sua senha secreta"
         />
 
-        <SubmitButton onPress={() => { }}>Acessar</SubmitButton>
+        <SubmitButton onPress={() => { }}>Criar conta</SubmitButton>
       </Form>
 
       <SignLink onPress={() => navigation.navigate('SignUp')}>

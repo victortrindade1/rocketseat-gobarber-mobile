@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "~/Android/Sdk/platform-tools/adb reverse tcp:9090 tcp:9090 && react-native run-android",
     "ios": "react-native run-ios",
-    "start": "~/Android/Sdk/platform-tools/adb reverse tcp:9090 tcp:9090 && react-native start",
+    "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
     "start-reset": "react-native start --reset-cache",

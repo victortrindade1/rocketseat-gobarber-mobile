@@ -188,7 +188,7 @@ export function* signUp({ payload }) {
       name,
       email,
       password,
-      provider: true,
+-      provider: true,
     });
 
 -    history.push('/');
