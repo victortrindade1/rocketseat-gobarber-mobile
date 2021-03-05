@@ -4,18 +4,20 @@ import { Provider } from 'react-redux';
 
 import { PersistGate } from 'redux-persist/integration/react';
 
+// eslint-disable-next-line import-helpers/order-imports
+import App from './App';
 import './config/ReactotronConfig';
-import Routes from './routes';
+
 import { store, persistor } from './store';
 
-const App = () => (
+const Index = () => (
   <Provider store={store}>
     {/* PersistGate pega o estado antes de renderizar o q tem dentro */}
     <PersistGate persistor={persistor}>
       <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
-      <Routes />
+      <App />
     </PersistGate>
   </Provider>
 );
 
-export default App;
+export default Index;
