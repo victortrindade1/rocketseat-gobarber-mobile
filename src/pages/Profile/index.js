@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Background from '~/components/Background';
+import { signOut } from '~/store/modules/auth/actions';
 import { updateProfileRequest } from '~/store/modules/user/actions';
 
 import {
@@ -12,6 +13,7 @@ import {
   Form,
   FormInput,
   SubmitButton,
+  LogoutButton,
 } from './styles';
 
 const Profile = () => {
@@ -46,6 +48,10 @@ const Profile = () => {
         confirmPassword,
       })
     );
+  };
+
+  const handleLogout = () => {
+    dispatch(signOut());
   };
 
   return (
@@ -113,6 +119,7 @@ const Profile = () => {
           />
 
           <SubmitButton onPress={handleSubmit}>Atualizar perfil</SubmitButton>
+          <LogoutButton onPress={handleLogout}>Sair do GoBarber</LogoutButton>
         </Form>
       </Container>
     </Background>
