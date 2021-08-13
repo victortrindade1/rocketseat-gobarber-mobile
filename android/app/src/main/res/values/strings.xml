@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Go Barber</string>
+
+    <string moduleConfig="true" name="CodePushDeploymentKey">BuildConfig.CODEPUSH_KEY</string>
 </resources>

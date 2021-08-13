@@ -10,6 +10,8 @@ target 'gobarber_mobile' do
 
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
+  pod 'CodePush', :path => '../node_modules/react-native-code-push'
+
   target 'gobarber_mobileTests' do
     inherit! :complete
     # Pods for testing
